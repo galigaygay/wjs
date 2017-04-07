@@ -1,0 +1,76 @@
+<!--html5文档申明-->
+<!DOCTYPE html>
+<!--当前使用的语言是中文简体-->
+<html lang="zh-cn">
+<head>
+    <!--申明文档编码是-->
+    <meta charset="utf-8">
+    <!--IE edge 最新的版本    渲染当前页面使用当前浏览器的最新版本内核来渲染-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--视口  宽度和设备一致  默认缩放比和pc一致  1：1  不允许用户自行缩放 0 1 no yes-->
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,user-scalable=0">
+    <!--以上两个设置必须在编码申明之后  -->
+    <title>模版</title>
+    <!-- Bootstrap 核心样式-->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!--
+        html5shiv  兼容语义化标签 html5
+        respond    兼容css3 media query 媒体查询
+    -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- respond 工作在  http 访问模式下-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--条件注释 lt gt lte gte-->
+    <!--[if lte IE 8]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--navbar 导航条  navbar-default默认样式-->
+<nav class="navbar navbar-default">
+    <!--响应式容器-->
+    <div class="container">
+        <!--在移动端完全显示里面的元素-->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--切换按钮-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <!--
+                sr-only screen read only
+                aria
+                屏幕阅读器
+                -->
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--商标 logo-->
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

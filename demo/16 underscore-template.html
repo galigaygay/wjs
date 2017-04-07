@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <ul id="box">
+
+    </ul>
+
+<!--不按js解析 解析成了字符串  不会显示在网页当中-->
+    <!--
+    <% 书写js代码  %>
+    <%= %> 取值 解析成html
+    <%- %> 取值 解析成字符串  xss 跨站脚本工具
+    -->
+<script type="text/template" id="template">
+    <% $.each(model,function(){ %>
+        <li><a href="<%=this.navLink%>"><%-this.navName %></a></li>
+    <% }); %>
+</script>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/underscore/underscore-min.js"></script>
+<script>
+    /*1.抽象数据 后台获取*/
+    var data = [
+        {navName:'<script>alert(0);<\/script>',navLink:'wy.html'},
+        {navName:'新闻',navLink:'wy.html'},
+        {navName:'贴吧',navLink:'wy.html'},
+        {navName:'知道',navLink:'wy.html'},
+        {navName:'音乐',navLink:'wy.html'}
+    ]
+    /*2.json格式的对象转换成html格式的字符串*/
+
+    /*1.数据*/
+    /*2.准备模版*/
+    /*3.模版的字符串  通过template 转换成模版函数*/
+    var templateFuc = _.template($('#template').html());
+    console.log(templateFuc);
+    /*4.调用这个函数传入准备额json数据  返回html格式的字符串*/
+    /*不能直接传数组  传对象*/
+    var html = templateFuc({model:data});
+    console.log(html);
+    /*5.渲染在页面当中*/
+    $('#box').html(html);
+</script>
+</body>
+</html>

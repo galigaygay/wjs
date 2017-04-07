@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <ul id="box">
+
+    </ul>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/underscore/underscore-min.js"></script>
+<script>
+    /*1.抽象数据 后台获取*/
+    var data = [
+        {navName:'网页',navLink:'wy.html'},
+        {navName:'新闻',navLink:'wy.html'},
+        {navName:'贴吧',navLink:'wy.html'},
+        {navName:'知道',navLink:'wy.html'},
+        {navName:'音乐',navLink:'wy.html'}
+    ]
+
+
+    /*2.json格式的对象转换成html格式的字符串*/
+    /*
+    * <li><a href="wy.html">网页</a></li>
+     <li><a href="wy.html">新闻</a></li>
+     <li><a href="wy.html">贴吧</a></li>
+     <li><a href="wy.html">知道</a></li>
+     <li><a href="wy.html">音乐</a></li>
+    * */
+
+    var html = '';
+
+    /*$('body').width()*/
+
+    $.each(data,function(i,obj){
+        html += '<li><a href="'+obj.navLink+'">'+obj.navName+'</a></li>';
+    });
+
+    $('#box').html(html);
+
+</script>
+</body>
+</html>

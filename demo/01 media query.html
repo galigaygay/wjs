@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>媒体查询</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 980px;
+            height: 1000px;
+            background: pink;
+            margin: 0 auto;
+        }
+        .container > span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        1.在大屏设备  1200px以上    布局容器  背景是红色  宽度1170px
+        2.在中屏设备  992px以上  1200px以下   布局容器  背景是蓝色  宽度970px
+        3.在小屏设备  768px以上  992px以下   布局容器  背景是绿色  宽度750px
+        4.在超小屏设备  768px以下   布局容器  背景是黄色  宽度100%
+    -->
+
+    <style>
+        /*1.在大屏设备  1200px以上    布局容器  背景是红色  宽度1170px*/
+        @media screen and (min-width: 1200px) {
+            /*大括号内的内容仅在上面定义的条件下生效*/
+            /*类 样式*/
+            .container{
+                background: red;
+                width: 1170px;
+            }
+        }
+        /*2.在中屏设备  992px以上  1200px以下   布局容器  背景是蓝色  宽度970px*/
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+            .container{
+                background: blue;
+                width: 970px;
+            }
+            .container span{
+                display: block;
+            }
+        }
+        /*3.在小屏设备  768px以上  992px以下   布局容器  背景是绿色  宽度750px*/
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            .container{
+                background: green;
+                width: 750px;
+            }
+        }
+        /*4.在超小屏设备  768px以下   布局容器  背景是黄色  宽度100%*/
+        @media screen and (max-width: 768px){
+            .container{
+                background: yellow;
+                width: 100%;
+            }
+        }
+    </style>
+    <!--响应式布局容器-->
+    <div class="container">
+        <!--仅在中屏设备可见-->
+        <span>圣诞节</span>
+    </div>
+</body>
+</html>
